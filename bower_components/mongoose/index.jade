@@ -1,0 +1,110 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    title Mongoose ODM v#{package.version}
+    link(href="http://fonts.googleapis.com/css?family=Anonymous+Pro:400,700|Droid+Sans+Mono|Open+Sans:400,700|Linden+Hill|Quattrocento:400,700|News+Cycle:400,700|Antic+Slab|Cabin+Condensed:400,700", rel="stylesheet", type="text/css")
+    link(href="docs/css/default.css", rel="stylesheet")
+    link(href="docs/css/style.css", rel="stylesheet")
+    link(href="/docs/css/github.css", rel="stylesheet")
+
+    style.
+      code {
+        font-size: 1em;
+      }
+
+      .sponsor {
+        margin-bottom: 40px;
+        font-size: 0.66em;
+        color: #666;
+      }
+
+      .sponsors {
+        margin-bottom: 40px;
+      }
+  body
+    a#forkbanner(href="http://github.com/learnboost/mongoose")
+      img(style="position: absolute; top: 0; right: 0; border: 0;", src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png", alt="Fork me on GitHub")
+    #wrap.homepage
+      #header
+        h1
+          a(href="https://github.com/learnboost/mongoose", target="blank")
+            .mongoose Mongoose
+      div.tagline
+        :markdown
+          Elegant [MongoDB](https://www.mongodb.com/) object modeling for
+          [Node.js](https://nodejs.org/en/)
+      #links
+        ul
+          li
+            a(href="docs/guide.html") Read the Docs
+          li
+            a(href="http://plugins.mongoosejs.io") Discover Plugins
+      #follow
+        ul
+          li
+            iframe(class="github-btn", src="http://ghbtns.com/github-btn.html?user=learnboost&amp;repo=mongoose&amp;type=watch&amp;count=true", allowtransparency="true", frameborder="0", scrolling="0", width="100px", height="20px")
+          li#version
+            span
+              | Version #{package.version}
+          li
+            iframe(class="github-btn", src="http://ghbtns.com/github-btn.html?user=learnboost&amp;repo=mongoose&amp;type=fork&amp;count=true", allowtransparency="true", frameborder="0", scrolling="0", width="100px", height="20px")
+      #inner
+        #what
+          p.what
+            | Let's face it,
+            strong writing MongoDB validation, casting and business logic boilerplate is a drag
+            | . That's why we wrote Mongoose.
+        :markdown
+          ```javascript
+          const mongoose = require('mongoose');
+          mongoose.connect('mongodb://localhost/test');
+
+          const Cat = mongoose.model('Cat', { name: String });
+
+          const kitty = new Cat({ name: 'Zildjian' });
+          kitty.save().then(() => console.log('meow'));
+          ```
+
+          Mongoose provides a straight-forward, schema-based solution to model
+          your application data. It includes built-in type casting, validation,
+          query building, business logic hooks and more, out of the box.
+
+          ## Getting Started
+
+          * [quick start guide](/docs/index.html)
+
+          ## Support
+
+          * [Stack Overflow](http://stackoverflow.com/questions/tagged/mongoose)
+          * [GitHub Issues](https://github.com/Automattic/mongoose/issues)
+          * [Gitter Chat](https://gitter.im/Automattic/mongoose)
+          * [MongoDB Support](http://www.mongodb.org/about/support/)
+
+          ## News
+
+          * [Twitter](https://twitter.com/mongoosejs)
+
+          ## Changelog
+
+          * [Changelog](https://github.com/Automattic/mongoose/blob/master/History.md)
+
+          ## Sponsors
+
+          <div class="sponsors">
+            <div>
+              <a href="https://mixmax.com">
+                <img src="/docs/images/mixmax.png" alt="MixMax.com">
+              </a>
+            </div>
+          </div>
+
+          <div class="sponsor">
+            Sponsor [Mongoose on OpenCollective](https://opencollective.com/mongoose) to get your company's logo above!
+          </div>
+
+    p#footer Licensed under MIT. Copyright 2011 <a href="http://learnboost.com">LearnBoost</a>.
+    script.
+      document.body.className = 'load';
+    include docs/includes/keen
